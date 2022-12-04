@@ -5,25 +5,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 <link rel="stylesheet"
-	href="<c:url value='/common/assets/log/styles.css'/>">
+	href="<c:url value='/common/static/css/styles.css'/>">
 </head>
 <body>
-	<div class="login-page">
-		<div class="form">
-			<form class="login-form" action="/CRUD/account/login" method="post">
-				<input type="email" placeholder="email" name="email" required /> <input
-					type="password" placeholder="password" name="password" required />
-				<button type="submit">login</button>
-				<p class="message">
-					Not registered? <a href="<c:url value='/log/register.jsp'/>">Create
-						an account</a>
-				</p>
-			</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-xl-9 mx-auto">
+				<div
+					class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+					<div class="card-img-left d-none d-md-flex">
+						<!-- Background image for card set in CSS! -->
+					</div>
+					<div class="card-body p-4 p-sm-5">
+						<h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+						<form action="/CRUD/account/login" method="post">
+							<div class="form-floating mb-3">
+								<input type="email" class="form-control" id="floatingInputEmail"
+									placeholder="name@example.com" name="email"> <label
+									for="floatingInputEmail">Email address</label>
+							</div>
+							<hr>
+							<div class="form-floating mb-3">
+								<input type="password" class="form-control"
+									id="floatingPassword" placeholder="Password" name="password">
+								<label for="floatingPassword">Password</label>
+							</div>
+							<div class="d-grid mb-2">
+								<button
+									class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+									type="submit">Register</button>
+							</div>
+							<a class="d-block text-center mt-2 small"
+								href="<c:url value='/log/register.jsp'/>">Have an account?
+								Sign Up</a>
+							<hr class="my-4">
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<script type="text/javascript"
-		src="<c:url value='/common/assets/log/script.js'/>"></script>
 </body>
 </html>

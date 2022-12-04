@@ -41,13 +41,20 @@ public class LoginController extends HttpServlet {
 		ac.setPassword(password);
 		DTO<AccountModels> dto = new DTO<AccountModels>();
 		dto = accountService.isExisted(ac);
+		
 		if (dto.isStatus()) {
 			if (dto.getData().getRole() == 1) {
-				request.getRequestDispatcher("/admin/home").forward(request, response);
+				System.out.println("1");
+				
+				request.setAttribute("user",dto.getData());
+				response.sendRedirect("/CRUD/admin/home");
 			} else {
-				request.getRequestDispatcher("/home").forward(request, response);
+				System.out.println("2");
+				request.setAttribute("user",dto.getData());
+				response.sendRedirect("/CRUD/home");
 			}
 		} else {
+			System.out.println("3");
 			response.sendRedirect("/CRUD/log/login.jsp");
 		}
 	}

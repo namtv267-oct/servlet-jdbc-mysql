@@ -35,3 +35,12 @@ CREATE TABLE `mobileshop`.`detailorder` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
+CREATE TABLE `mobileshop`.`order` (
+  `idorder` BIGINT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `price` FLOAT NOT NULL,
+  `amount` INT NOT NULL DEFAULT 1,
+  PRIMARY KEY (`idorder`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
