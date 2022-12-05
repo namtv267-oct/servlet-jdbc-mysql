@@ -34,6 +34,8 @@ public class LoginController extends HttpServlet {
 
 	protected void processLogin(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		AccountModels ac = new AccountModels();

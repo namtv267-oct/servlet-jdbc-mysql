@@ -23,6 +23,11 @@ public class EditProductController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		Long id = Long.parseLong(request.getParameter("id"));
+		ProductModels $ = productService.getById(id);
+		request.setAttribute("product", $);
+		System.out.println(id);
+		request.getRequestDispatcher("/admin/edit.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,13 +40,16 @@ public class EditProductController extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("utf-8");
 		Long id = Long.parseLong(request.getParameter("id"));
-		System.out.println(id);
 		ProductModels product = productService.getById(id);
+		System.out.println(product.toString());
 		product.setName(request.getParameter("name"));
-		product.setDescription(request.getParameter("description"));
+		product.setDescription(request.getParameter("description") == null ? product.getDescription()
+				: request.getParameter("description"));
 		product.setPrice(Float.parseFloat(request.getParameter("price")));
 		product.setSrc(request.getParameter("src"));
 		product.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+		product.setType(request.getParameter("type"));
+		product.setBrand(request.getParameter("brand"));
 		productService.editProduct(product);
 		response.sendRedirect("/CRUD/admin/home");
 	}

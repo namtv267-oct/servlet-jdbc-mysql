@@ -16,35 +16,44 @@ import service.IProductService;
 /**
  * Servlet implementation class HomeWebController
  */
-@WebServlet(name="homeController",urlPatterns= {"/home"})
+@WebServlet(name = "homeController", urlPatterns = { "/home" })
 public class HomeWebController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       @Inject
-       private IProductService productService;
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HomeWebController() {
-        super();
-    }
+	@Inject
+	private IProductService productService;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		processHome(request,response);
+	public HomeWebController() {
+		super();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processHome(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
-	protected void processHome (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	List<ProductModels> products = productService.getAll();
-	request.setAttribute("products", products);
-	request.getRequestDispatcher("/web/home.jsp").forward(request, response);
+
+	protected void processHome(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
+		List<ProductModels> products = productService.getAll();
+		request.setAttribute("products", products);
+		request.getRequestDispatcher("/web/home.jsp").forward(request, response);
 	}
 
 }

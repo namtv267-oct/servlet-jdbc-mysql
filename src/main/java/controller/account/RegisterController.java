@@ -49,6 +49,8 @@ public class RegisterController extends HttpServlet {
 
 	protected void processRegister(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		AccountModels account = new AccountModels();
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");

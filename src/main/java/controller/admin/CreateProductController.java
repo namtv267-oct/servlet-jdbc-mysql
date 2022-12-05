@@ -44,11 +44,11 @@ public class CreateProductController extends HttpServlet {
 		String description = request.getParameter("description");
 		float price = Float.parseFloat(request.getParameter("price"));
 		String src = request.getParameter("src");
-		String type = " ";
-		String brand = " ";
+		String type = request.getParameter("type");
+		String brand = request.getParameter("brand");
 		Integer quantity = Integer.parseInt(request.getParameter("quantity"));
 		ProductModels product = new ProductModels(name, description, price, src, type, brand, quantity);
 		productService.createProducts(product);
-		request.getRequestDispatcher("/admin/create-product.jsp").forward(request, response);
+		response.sendRedirect("/CRUD/admin/home");
 	}
 }

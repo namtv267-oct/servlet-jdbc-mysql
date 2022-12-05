@@ -48,6 +48,8 @@ public class DetailController extends HttpServlet {
 
 	protected void processShowDetail(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		Long id = Long.parseLong(request.getParameter("id"));
 		ProductModels product = productService.getById(id);
 		request.setAttribute("product", product);

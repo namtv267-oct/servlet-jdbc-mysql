@@ -9,13 +9,13 @@
 <title>Shop Item - Start Bootstrap Template</title>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon"
-	href="<c:url value='/common/assets/favicon.ico'/>" />
+	href="<c:url value='/common/web/favicon.ico'/>" />
 <!-- Bootstrap icons-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
 	rel="stylesheet" />
 <!-- Core theme CSS (includes Bootstrap)-->
-<link href="<c:url value='/common/static/css/styles.css'/>"
+<link href="<c:url value='/common/web/css/styles.css'/>"
 	rel="stylesheet" />
 </head>
 <body>
@@ -27,7 +27,7 @@
 		
 	</script>
 	<!-- Core theme JS-->
-	<script src="<c:url value='/common/static/js/scripts.js'/>">
+	<script src="<c:url value='/common/web/js/scripts.js'/>">
 		
 	</script>
 </body>

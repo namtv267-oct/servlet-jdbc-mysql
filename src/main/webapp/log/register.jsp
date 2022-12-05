@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Sign up</title>
 <link rel="stylesheet"
-	href="<c:url value='/common/static/css/styles.css'/>">
+	href="<c:url value='/common/web/css/styles.css'/>">
 </head>
 <body>
 	<div class="container">

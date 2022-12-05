@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <link rel="stylesheet"
-	href="<c:url value='/common/static/css/styles.css'/>">
+	href="<c:url value='/common/web/css/styles.css'/>">
 </head>
 <body>
 	<div class="container">
@@ -23,19 +23,19 @@
 						<form action="/CRUD/account/login" method="post">
 							<div class="form-floating mb-3">
 								<input type="email" class="form-control" id="floatingInputEmail"
-									placeholder="name@example.com" name="email"> <label
+									placeholder="name@example.com" name="email" required="required"> <label
 									for="floatingInputEmail">Email address</label>
 							</div>
 							<hr>
 							<div class="form-floating mb-3">
 								<input type="password" class="form-control"
-									id="floatingPassword" placeholder="Password" name="password">
+									id="floatingPassword" placeholder="Password" name="password" required="required">
 								<label for="floatingPassword">Password</label>
 							</div>
 							<div class="d-grid mb-2">
 								<button
 									class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
-									type="submit">Register</button>
+									type="submit">Login</button>
 							</div>
 							<a class="d-block text-center mt-2 small"
 								href="<c:url value='/log/register.jsp'/>">Have an account?

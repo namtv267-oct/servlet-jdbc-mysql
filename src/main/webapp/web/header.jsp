@@ -14,10 +14,11 @@
 				<li class="nav-item"><a class="nav-link" href="#!">About</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" id="navbarDropdown" href="#"
-					role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+					role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<li><a class="dropdown-item" href="<c:url value='/log/login.jsp'/> ">Login</a></li>
 						<li><a class="dropdown-item" href="<c:url value='/log/register.jsp'/>">Register</a></li>
+						<li><a class="dropdown-item" href="<c:url value='/CRUD/account/logout'/>">Logout</a></li>
 					</ul></li>
 			</ul>
 			<form class="d-flex mx-3"

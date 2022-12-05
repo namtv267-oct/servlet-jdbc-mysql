@@ -51,6 +51,8 @@ public class SearchController extends HttpServlet {
 
 	protected void processSearch(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("utf-8");
 		StringBuilder name = new StringBuilder("%");
 		name.append(request.getParameter("q"));
 		name.append("%");
@@ -60,7 +62,7 @@ public class SearchController extends HttpServlet {
 			List<ProductModels> products = product.getDatas();
 			request.setAttribute("products", products);
 			request.getRequestDispatcher("/web/search.jsp").forward(request, response);
-		}else {
+		} else {
 			request.setAttribute("products", "Have no products !");
 			request.getRequestDispatcher("/web/search.jsp").forward(request, response);
 		}
